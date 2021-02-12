@@ -1,0 +1,16 @@
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        self.s = s
+        from collections import Counter
+        c = []
+        b = Counter(s)
+
+        for k,v in b.items():
+            if v == 1:
+                c.append(k)
+
+        if len(c) == 0:
+            return(-1)
+        else:
+            result = s.index(c[0])
+            return(result)
