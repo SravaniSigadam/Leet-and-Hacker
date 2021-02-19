@@ -1,7 +1,7 @@
 def vaccumCleanerRoute(s):
     
     count = 0
-    for char in a:
+    for char in s:
         if char == 'L' or  char == 'U':
             count+=1
         else:
