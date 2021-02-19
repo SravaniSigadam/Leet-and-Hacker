@@ -1,0 +1,22 @@
+def vaccumCleanerRoute(s):
+    
+    count = 0
+    for char in a:
+        if char == 'L' or  char == 'U':
+            count+=1
+        else:
+            count-=1
+
+    return count==0
+    
+    
+    
+    # Using a dictionary
+    
+    #def vaccumCleanerRoute(s):
+    
+      #b = Counter(s)
+
+      #if (b['R'] == b['L']) & (b['U'] == b['D']):
+          #return True
+      #return False
