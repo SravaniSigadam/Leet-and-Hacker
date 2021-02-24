@@ -1,0 +1,7 @@
+def counting(jewels,stones):
+    d = Counter(jewels)
+    l = []
+    for i in stones:
+        if i in d.keys():
+            l.append(i)
+    return(len(l))
