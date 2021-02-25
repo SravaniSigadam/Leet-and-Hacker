@@ -1,0 +1,28 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        s_dict = {}
+        t_dict = {}
+        for i in s:
+            s_dict[i] = s_dict.get(i,0) + 1
+        for i in t:
+            t_dict[i] = t_dict.get(i,0) + 1
+        for i in s_dict: 
+            if s_dict[i] != t_dict.get(i,0):
+                return False
+        return False if (len(s) != len(t)) else True
+
+
+
+#class Solution:
+    #def isAnagram(self, s: str, t: str) -> bool:
+        #d = Counter(s)
+        #for i in t:
+            #if i not in d:
+                #return False
+            #elif d[i] == 1:
+                #d.pop(i)
+            #elif d[i] > 1:
+                #d[i] -=1
+        #if len(d) == 0:
+            #return True
+        #return False
