@@ -1,0 +1,17 @@
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        self.arr = arr
+        b = {}
+        for i in arr:
+            b[i] = b.get(i,0) + 1 
+       
+        if len(set(b.values())) == len(b.values()):
+            return True
+        return False
+        
+
+#class Solution:
+    #def uniqueOccurrences(self, arr: List[int]) -> bool:
+        #self.arr = arr
+        #l = [val for key,val in Counter(arr).items()]
+        #return(len(l) == len(set(l))) 
