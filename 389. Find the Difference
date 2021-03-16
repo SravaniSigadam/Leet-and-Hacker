@@ -1,0 +1,31 @@
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        a = ""
+        if s == "":
+            return t
+        else:
+            b = Counter(s)
+            for i in t:
+                if i in b and b[i] != 0:
+                    b[i] -= 1
+                else:
+                    a+=i
+        return(a if len(a) > 0 else "")
+        
+findTheDifference("abcd","abcde")
+Output: 'e'
+
+
+#class Solution:
+    #def findTheDifference(self, s: str, t: str) -> str:
+        #if s == "":
+            #return(t)
+        #else:
+            #a = ""
+            #l=list(s)
+            #for i in t:
+                #if i in l:
+                    #l.remove(i)
+                #else:
+                    #a+=i
+        #return(a if len(a) > 0 else "")
