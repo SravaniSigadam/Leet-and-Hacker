@@ -1,0 +1,23 @@
+class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        nums1,nums2=list(set(nums1)),list(set(nums2))
+        d=Counter(nums1+nums2)
+        newlist = []
+        for i in d:
+            if d[i] > 1:
+                newlist.append(i)
+        return(newlist)
+        
+        
+intersection([4,9,5],[9,4,9,8,4])
+Output: [9, 4]
+
+
+
+#class Solution:
+    #def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        #newlist = []
+        #for num in nums2:
+            #if num in nums1 and num not in newlist:
+                #newlist.append(num)
+        #return(newlist)
