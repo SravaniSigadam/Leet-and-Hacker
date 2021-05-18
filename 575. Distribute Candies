@@ -3,3 +3,6 @@ def distributeCandies(self, candyType: List[int]) -> int:
   for i in candyType:
     d[i] = d.get(i,0) + 1
   return(min(len(d.keys()),(len(candyType))//2))
+
+# One liner
+return min(len(set(candyType)), len(candyType)//2)
