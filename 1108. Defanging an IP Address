@@ -1,0 +1,12 @@
+def defangingip(address):
+    a = ""
+    for i in address:
+        if i == '.':
+            a=a+'[.]'
+        else:
+            a=a+i
+    return a
+
+    
+def defangip(address):
+  return address.replace(".","[.]")
