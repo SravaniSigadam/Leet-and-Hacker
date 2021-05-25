@@ -1,0 +1,12 @@
+class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        shuffledList = []
+        for i in range(n):
+            shuffledList.append(nums[i])
+            shuffledList.append(nums[n+i])
+        return shuffledList
+        
+        
+# Solution 2        
+        def shuffle(self, nums: List[int], n: int) -> List[int]:
+          return [j for i in zip(nums[:n],nums[n:] for j in i)]
