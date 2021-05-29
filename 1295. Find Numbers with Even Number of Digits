@@ -1,0 +1,20 @@
+def findNumbers(nums):
+    count = 0
+    for i in nums:
+        if len(str(i)) % 2 == 0:
+            count+=1
+    return count
+    
+#Solution 2
+
+class Solution:
+    def findNumbers(self, nums: List[int]) -> int:
+        totalCount = 0
+        for i in range(len(nums)):
+            count = 0
+            while nums[i] > 0:
+                nums[i] = nums[i] // 10
+                count+=1
+            if count %2 ==0:
+                totalCount+=1
+        return totalCount
