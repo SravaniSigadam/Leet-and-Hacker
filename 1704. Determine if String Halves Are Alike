@@ -1,0 +1,31 @@
+class Solution:
+    def halvesAreAlike(self, s: str) -> bool:
+        vowels = "aeiouAEIOU"
+        counta = countb = 0
+        for char in s[:len(s)//2]:
+            if char in vowels:
+                counta+=1           
+        for char in s[len(s)//2:]:
+            if char in vowels:
+                countb+=1
+        return counta == countb
+        
+#Solution 2
+class Solution:
+    def halvesAreAlike(self, s: str) -> bool:
+        half = int(len(s)/2)
+        vowels = "aeiouAEIOU"
+        counta = 0
+        countb = 0
+        for char in s[0:half]:
+            if char in vowels:
+                counta+=1
+            
+        for char in s[half:len(s)]:
+            if char in vowels:
+                countb+=1
+        return counta == countb
+  
+ #Solution 3
+ def halvesAreAlike(s):
+    return sum(1 for char in s[:len(s)//2] if char in 'aeiouAEIOU') == sum(1 for char in s[len(s)//2:] if char in 'aeiouAEIOU')
