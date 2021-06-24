@@ -1,0 +1,28 @@
+def sortSentence(s):
+    d = {}
+    for word in s.split():
+        d[int(word[-1])] = word[:-1]
+    out = ""
+    for i in range(1,len(d)+1):
+        out += d[i] + " "
+    return out[:-1]
+    
+# Solution 2
+
+def sortSentence(s):
+    words = s.split()
+    t = {}
+    for word in words:
+        index = int(word[-1])
+        t[index] = word[:-1]
+    i = 1
+    out = ""
+    while i in t:
+        out = out + " " + t[i]
+        i += 1
+    out.strip()
+    return out[1:]
+
+# Solution 3
+def sortSentence(s):
+    return " ".join(map(lambda substring: substring[:-1], sorted(s.split(), key=lambda x: x[-1])))
