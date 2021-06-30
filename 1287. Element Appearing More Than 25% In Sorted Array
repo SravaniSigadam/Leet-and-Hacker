@@ -1,0 +1,8 @@
+class Solution:
+    def findSpecialInteger(self, arr: List[int]) -> int:
+        d = {}
+        for i in arr:
+            d[i] = d.get(i,0) + 1
+        for key,val in d.items():
+            if val > len(arr)/4:
+                return key
