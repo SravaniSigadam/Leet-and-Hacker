@@ -1,0 +1,16 @@
+class Solution:
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        while len(stones)>1:
+            x = max(stones)
+            #print('this is x',x)
+            stones.remove(x)
+            #print('nums after removing x',nums)
+            y = max(stones)
+            #print('this is y',y)
+            stones.remove(y)
+            #print('nums after removing y',nums)
+            if y <= x:
+                #print('to append',x-y)
+                stones.append(x-y)
+                #print('nums',nums)
+        return stones[0]
