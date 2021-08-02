@@ -1,0 +1,23 @@
+class Solution:
+    def getLucky(self, s: str, k: int) -> int:
+        num = ""
+        for char in s:
+            num+=str(ord(char) - 96)
+        
+        while k >0:
+            total = 0
+            for i in num:
+                total+=int(i)
+            num = str(total)
+            k -= 1
+        return num
+        
+Solution #2
+
+def getLucky(s, k):
+    strg = ''.join(str(ord(i)-96) for i in s)  # ord('a') = 97
+        
+    for _ in range(k) :           
+        strg = str(sum(int(j) for j in strg))
+        
+    return strg
