@@ -1,0 +1,20 @@
+class Solution:
+    def findErrorNums(self, nums: List[int]) -> List[int]:
+        d = {}
+        l = []
+        for num in nums:
+            if num not in d:
+                d[num]=1
+            else:
+                l.append(num)
+                break
+        l.append(sum(range(1, len(nums)+1)) - (sum(nums) - l[0]))
+        return l
+    
+Solution 2
+
+def findErrorNums(nums):
+    n = len(nums)
+    actual_sum = n*(n+1)//2 
+    print(actual_sum)
+    return [sum(nums)-sum(set(nums)), actual_sum-sum(set(nums))] 
