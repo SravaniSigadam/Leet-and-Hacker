@@ -1,0 +1,13 @@
+class Solution:
+    def makeFancyString(self, s: str) -> str:
+        if len(s) < 2:
+            return s
+        else:
+            new = s[0]+s[1]
+            for i in s[2:]:
+                if i == new[-1] == new[-2]:
+                    continue
+                else:
+                    new+=i
+        return new
+        
