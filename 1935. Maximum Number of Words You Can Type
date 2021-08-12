@@ -1,0 +1,21 @@
+def maxwords(text,brokenLetters):
+    text = text.split()
+    count = len(text)
+    brokenLetters = set(brokenLetters)
+    for word in text:
+        for letter in word:
+            if letter in brokenLetters: 
+                count -= 1
+                break
+    return count
+    
+Solution #2
+def maxwords(text,brokenLetters):
+    brokenLetters = set(brokenLetters)
+    count = 0
+    for word in text.split():
+        unique = set(word)
+        print(unique)
+        if (len(unique - brokenLetters) == len(unique)):
+            count += 1
+    return count
