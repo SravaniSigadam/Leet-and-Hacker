@@ -1,0 +1,15 @@
+Return true if the summation of the numerical values of firstWord and secondWord equals the numerical value of targetWord, or false otherwise.
+
+class Solution:
+    def isSumEqual(self, firstWord: str, secondWord: str, targetWord: str) -> bool:
+        firstWordSum = ''
+        secondWordSum = ''
+        targetWordSum = ''
+        for i in firstWord:
+            firstWordSum = firstWordSum + str(ord(i)-97)
+        for j in secondWord:
+            secondWordSum = secondWordSum + str(ord(j)-97)
+        for x in targetWord:
+            targetWordSum = targetWordSum + str(ord(x)-97)
+        return int(firstWordSum) + int(secondWordSum) == int(targetWordSum)
+        
