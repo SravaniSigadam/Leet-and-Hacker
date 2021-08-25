@@ -1,0 +1,12 @@
+# Dailybyte
+
+def thief(nums):
+    first = nums[0]
+    second = nums[1]
+    for i in range(2,len(nums)-1):
+        if i%2 == 0:
+            second+=nums[i]
+        first+=nums[i]
+    if first > second:
+        return first
+    return second
