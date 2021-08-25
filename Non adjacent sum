@@ -1,5 +1,11 @@
 # Dailybyte
 
+You are a thief trying to steal from houses in a neighborhood. The amount of money that can be stolen from the ith house is represented by nums[i]. 
+While you’d like to steal from all the houses, if adjacent houses are broken into, the police are notified via a security system. 
+Return the largest amount of money you can steal without alerting the police.
+Note: You may not modify nums.
+Ex: Given the following nums...
+
 def thief(nums):
     first = nums[0]
     second = nums[1]
