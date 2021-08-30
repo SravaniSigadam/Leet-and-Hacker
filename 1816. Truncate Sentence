@@ -1,0 +1,18 @@
+# 1816. Truncate Sentence
+
+# Input: s = "Hello how are you Contestant", k = 4 Output: "Hello how are you"
+
+def truncateSentence(s,k):
+    out = []
+    for i in range(k):
+        out.append(s.split(' ')[i])
+    return ' '.join(out)
+    
+    
+ def truncateSentence(s,k):
+    return(" ".join(s.split(' ')[:k]))
+    
+    
+ def truncateSentence(s,k):
+    out = list(s.split(" "))
+    return(" ".join(out[:k]))
