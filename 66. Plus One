@@ -1,0 +1,22 @@
+# Solution 1
+
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        num = 0
+        for i in range(len(digits)):
+    	    num += digits[i] * pow(10, (len(digits)-1-i))
+        return [int(i) for i in str(num+1)]
+        
+
+# Solution 2
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        newList = []
+        numStr = ''
+        for num in digits:
+            numStr+=str(num)
+    
+        numStr = int(numStr) + 1
+        for each in str(numStr):
+            newList.append(int(each))
+        return newList
