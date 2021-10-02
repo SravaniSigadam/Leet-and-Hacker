@@ -1,0 +1,27 @@
+# Given a 0-indexed string word and a character ch, reverse the segment of word that starts at index 0 and ends at the index of the first occurrence of ch (inclusive). 
+# If the character ch does not exist in word, do nothing.
+
+# Input: word = "abcdefd", ch = "d" Output: "dcbaefd"
+
+# Solution 1
+
+class Solution:
+    def reversePrefix(self, word: str, ch: str) -> str:
+        new = ''
+        if ch not in word:
+            return word
+        else:
+            i = word.index(ch)
+            for letter in range(i,-1,-1):
+                new+=word[letter]
+            for next in range(i+1,len(word)):
+                new+=word[next]
+        return new
+  
+  # Solution 2 (Optimized)
+  class Solution:
+    def reversePrefix(self, word: str, ch: str) -> str:
+        idx=word.find(ch)    
+        if idx:
+            return word[:idx+1][::-1]+ word[idx+1:]
+        return word
