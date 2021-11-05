@@ -1,1 +1,14 @@
+# Given a 0-indexed integer array nums, return true if it can be made strictly increasing after removing exactly one element, or false otherwise. 
+# If the array is already strictly increasing, return true.
+
+# The array nums is strictly increasing if nums[i - 1] < nums[i] for each index (1 <= i < nums.length).
+
 # Solution 1
+
+def removeOne(nums):
+    for i in range(len(nums)):
+        temp = nums.copy()
+        del temp[i]
+        if all(i < j for i, j in zip(temp, temp[1:])):
+            return True
+    return False
