@@ -1,0 +1,39 @@
+# You are given a 0-indexed integer array nums and a target element target. A target index is an index i such that nums[i] == target.
+
+# Return a list of the target indices of nums after sorting nums in non-decreasing order. If there are no target indices, return an empty list. 
+# The returned list must be sorted in increasing order.
+
+# Input: nums = [1,2,5,2,3], target = 2 Output: [1,2]
+        
+# Solution 1
+  
+  class Solution:
+    def targetIndices(self, nums: List[int], target: int) -> List[int]:
+        nums.sort()
+        out = []
+        for i,n in enumerate(nums):
+            if n == target:
+                out.append(i)
+        return out 
+        
+#Solution 2
+
+class Solution:
+    def targetIndices(self, nums: List[int], target: int) -> List[int]:
+        nums = sorted(nums)
+        out = []
+        for i,n in enumerate(nums):
+            if n == target:
+                out.append(i)
+        return out 
+        
+# Solution 3
+class Solution:
+    def targetIndices(self, nums: List[int], target: int) -> List[int]:
+        n_lower = n_target = 0
+        for n in nums:
+            if n < target:
+                n_lower += 1
+            elif n == target:
+                n_target += 1
+        return list(range(n_lower, n_lower + n_target)) if n_target else []
