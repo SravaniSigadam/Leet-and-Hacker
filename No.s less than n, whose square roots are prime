@@ -1,0 +1,18 @@
+# Given a positive integer n, please write a function to return all the numbers, less than n, whose square roots are prime numbers 
+# e.g. Given n=10, the output should be 4, 9.
+
+def isPrime(n):
+    for i in range (2, n):
+        if (n % i) == 0:
+            return False
+    return True
+
+results = []
+# for i in range(2,100):
+#     if isPrime(int(i*0.5)) and int(i0.5) == i*0.5:
+#         results.append(i)
+# print(results)
+for i in range(2, int(100**0.5)+1):
+       if isPrime(i) :
+        results.append(i*i)
+print(results)
