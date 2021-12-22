@@ -1,0 +1,27 @@
+# You are given the array paths, where paths[i] = [cityAi, cityBi] means there exists a direct path going from cityAi to cityBi. 
+# Return the destination city, that is, the city without any path outgoing to another city.
+
+# It is guaranteed that the graph of paths forms a line without any loop, therefore, there will be exactly one destination city.
+
+# Input: paths = [["London","New York"],["New York","Lima"],["Lima","Sao Paulo"]] Output: "Sao Paulo" 
+
+class Solution:
+    def destCity(self, paths: List[List[str]]) -> str:
+        departure = set()
+        for cities in paths:
+            departure.add(cities[0])
+        for cities in paths:
+            if cities[1] in departure:
+                continue 
+            else:
+                return cities[1]
+
+class Solution:
+    def destCity(self, paths: List[List[str]]) -> str:
+        d = {}
+        for i in paths:
+            d[i[0]] = i[1]
+    
+        for source, dest in paths:
+            if dest not in d:
+                return dest
