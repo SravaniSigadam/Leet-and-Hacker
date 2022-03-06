@@ -1,0 +1,26 @@
+# Solution 1:
+
+class Solution:
+    def numUniqueEmails(self, emails: List[str]) -> int:
+        res = set()
+        for email in emails:
+            local,domain = email.split('@')
+            temp = ''
+            for letter in local:
+                if letter == '.':
+                    continue
+                elif letter == '+':
+                    break
+                else:
+                    temp+=letter
+            res.add(temp+"@"+domain)
+        return len(res)
+        
+ 
+# Solution 2
+def numUniqueEmails(emails):
+    def parse(email):
+        local, domain = email.split('@')
+        local = local.split('+')[0].replace('.',"")
+        return f"{local}@{domain}"   
+    return len(set(map(parse, emails)))
