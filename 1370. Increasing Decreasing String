@@ -1,0 +1,23 @@
+
+# Input: s = "aaaabbbbcccc" Output: "abccbaabccba"
+
+def sortString(s):
+    d = {}
+    res = ''
+    for i in s:
+        d[i] = d.get(i,0) + 1
+    chars = sorted(list(set(s)))
+    while d:
+        for char in chars:
+            if char in d:
+                res+=char
+                d[char]-=1
+                if d[char] == 0:
+                    del d[char]
+        for char in reversed(chars):
+            if char in d:
+                res+=char
+                d[char]-=1
+                if d[char] == 0:
+                    del d[char]
+    return res
