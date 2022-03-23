@@ -1,0 +1,14 @@
+# A string s can be partitioned into groups of size k using the following procedure:
+# The first group consists of the first k characters of the string, the second group consists of the next k characters of the string, and so on. 
+# Each character can be a part of exactly one group.
+# For the last group, if the string does not have k characters remaining, a character fill is used to complete the group.
+# Input: s = "abcdefghij", k = 3, fill = "x" Output: ["abc","def","ghi","jxx"]
+
+class Solution:
+    def divideString(self, s: str, k: int, fill: str) -> List[str]:
+        new = []
+        if len(s)%k != 0:
+            s+=fill*(k-len(s)%k)
+        for i in range(0,len(s),k):
+            new.append(s[i:i+k])
+        return new
