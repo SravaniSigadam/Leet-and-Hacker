@@ -1,0 +1,18 @@
+"""
+Write a function that returns the cumulative sum of elements in a list
+"""
+
+Input: cummulative_sum1([1,1,1]) # ([1,1,1]) == [1,2,3]
+
+def cummulative_sum(l):
+    new = [l[0]]
+    tot = l[0]
+    for i in range(1,len(l)):
+        tot = l[i]+tot
+        new.append(tot)
+    return new
+    
+def cummulative_sum1(l):
+    for i in range(1,len(l)):
+        l[i] = l[i]+l[i-1]
+    return l
