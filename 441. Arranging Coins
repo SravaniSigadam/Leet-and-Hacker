@@ -1,0 +1,42 @@
+# You have n coins and you want to build a staircase with these coins.
+# The staircase consists of k rows where the ith row has exactly i coins. The last row of the staircase may be incomplete.
+
+# Given the integer n, return the number of complete rows of the staircase you will build.
+
+class Solution:
+    def arrangeCoins(self, n: int) -> int:
+       if n == 1:
+            return 1
+        else:
+            total = 0
+            for i in range(n):
+                total+=(i+1)
+                if total > n:
+                    return i
+                    
+class Solution:
+    def arrangeCoins(self, n: int) -> int:
+        # total = 0
+        # if n == 1 or n==2:
+        #     return 1
+        # for i in range(1,n):
+        #     z = i*(i+1)/2
+        #     total = max(total, z)
+        #     if total == n:
+        #         return i
+        #     elif total > n:
+        #         return i-1
+        
+ # One line Solution using Quadratic formula for finding roots
+    def arrangeCoins(self, n: int) -> int:
+        return int((int(1+8*n)**0.5 - 1)//2)
+        
+def arrangeCoins(n):
+    c,i=0,1
+    while n>0:
+        if n>=i:
+            c+=1
+            n-=i
+        else: break
+            i+=1
+    return c
