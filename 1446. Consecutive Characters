@@ -1,0 +1,39 @@
+# The power of the string is the maximum length of a non-empty substring that contains only one unique character.
+# Given a string s, return the power of s.
+
+# Input: s = "leetcode" Output: 2 Explanation: The substring "ee" is of length 2 with the character 'e' only.
+
+
+# My solution (If you want both letter and the number of consecutive times)
+def consecutiveChars(s):
+    current = s[0]
+    new = s[0]
+    lisst = []
+    for i in range(1,len(s)):
+        if s[i] == current:
+            new+=s[i]
+        else:
+            lisst.append([''.join(set(new)),len(new)])
+            current = new = s[i]
+    lisst.append([''.join(set(new)),len(new)])
+    lisst1 = sorted(lisst, key= lambda x: x[1], reverse = True)
+    return lisst1[0][1]
+    
+    
+# If you want only number 
+def consecutiveChars1(s):
+    local_max, global_max = 1, 1    
+    # dummy char for initialization
+    prev = '#'
+    for char in s:
+        if char == prev:
+            # keeps consecutive, update local max
+            local_max += 1    
+            # update global max length with latest one
+            global_max = max( global_max, local_max )    
+        else:    
+            # lastest consective chars stops, reset local max
+            local_max = 1
+            # update previous char as current char for next iteration
+            prev = char
+    return global_max
